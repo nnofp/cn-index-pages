@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星空体育 · 聚合查询与延伸阅读</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f7f2eb;
+            font-family: 'Noto Serif SC', 'Georgia', 'Times New Roman', serif;
+            color: #2c2b28;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+        }
+        .page {
+            max-width: 840px;
+            margin: 0 auto;
+            background-color: #fcf9f5;
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.04);
+        }
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #3d3a36;
+            margin-bottom: 0.5rem;
+            border-left: 5px solid #b7a48c;
+            padding-left: 1.2rem;
+        }
+        .subhead {
+            font-size: 1.05rem;
+            color: #7a7267;
+            margin-bottom: 2.5rem;
+            padding-left: 1.8rem;
+            border-bottom: 1px solid #e5ddd4;
+            padding-bottom: 0.8rem;
+        }
+        .hero-box {
+            background: #f1ebe3;
+            padding: 2rem 2rem;
+            border-radius: 16px;
+            margin-bottom: 2.5rem;
+        }
+        .hero-box p {
+            font-size: 1.12rem;
+            margin-bottom: 0.6rem;
+        }
+        .hero-box strong {
+            color: #5f4e3a;
+            font-weight: 600;
+        }
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #4d443b;
+            margin: 2.2rem 0 1rem 0;
+            border-bottom: 1px dashed #d9cfc3;
+            padding-bottom: 0.3rem;
+        }
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 1.5rem 0 2rem 0;
+        }
+        .feature-card {
+            flex: 1 1 200px;
+            background: #f9f3ec;
+            padding: 1.4rem 1.2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .feature-card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #5f5242;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #4f4942;
+        }
+        .callout {
+            background: #ede7de;
+            padding: 1.6rem 2rem;
+            border-radius: 14px;
+            margin: 2rem 0;
+            border-left: 6px solid #b7a48c;
+            font-style: normal;
+        }
+        .callout p {
+            margin-bottom: 0.5rem;
+        }
+        .callout p:last-child {
+            margin-bottom: 0;
+        }
+        .faq-block {
+            margin: 2.2rem 0 1.8rem 0;
+        }
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+        .faq-q {
+            font-weight: 600;
+            color: #4f4438;
+            font-size: 1.02rem;
+            margin-bottom: 0.2rem;
+        }
+        .faq-a {
+            color: #5c554b;
+            padding-left: 1.2rem;
+            border-left: 3px solid #d6cbbd;
+            padding-top: 0.1rem;
+            padding-bottom: 0.1rem;
+        }
+        .footer-links {
+            margin-top: 3rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e5ddd4;
+            font-size: 0.95rem;
+            color: #6b6257;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 2.2rem;
+        }
+        .footer-links a {
+            color: #6b5b49;
+            text-decoration: none;
+            border-bottom: 1px dotted #b7a48c;
+        }
+        .footer-links a:hover {
+            color: #3f352b;
+            border-bottom: 1px solid #7f6b56;
+        }
+        .inline-link {
+            color: #6b5b49;
+            text-decoration: none;
+            border-bottom: 1px dotted #b7a48c;
+            font-weight: 500;
+        }
+        .inline-link:hover {
+            color: #3f352b;
+            border-bottom: 1px solid #7f6b56;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .page {
+                padding: 2rem 1.2rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+                padding-left: 0.8rem;
+            }
+            .subhead {
+                font-size: 0.95rem;
+                padding-left: 1rem;
+            }
+            .hero-box {
+                padding: 1.4rem 1.2rem;
+            }
+            .feature-grid {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .callout {
+                padding: 1.2rem 1.2rem;
+            }
+            .footer-links {
+                flex-direction: column;
+                gap: 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero 区 -->
+    <h1>星空体育</h1>
+    <div class="subhead">日常查询 · 对照参考 · 轻松延伸</div>
+
+    <div class="hero-box">
+        <p>无论是比赛日快速核对赛程，还是闲暇时翻看项目规则与术语，<strong>星空体育</strong>都希望成为你手边那个不张扬、但可靠的参考来源。</p>
+        <p>这里没有喧哗的推送，只有整理过的信息骨架——让你在需要时，能安静地查到自己关注的内容。</p>
+    </div>
+
+    <!-- 优势区 -->
+    <div class="section-title">为什么可以常来看看</div>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3>信息结构清晰</h3>
+            <p>赛程、队伍、项目分类都按常用逻辑组织，减少翻找的疲惫感。</p>
+        </div>
+        <div class="feature-card">
+            <h3>对照阅读友好</h3>
+            <p>多项目、多赛季的数据并排呈现，方便横向参考与回溯。</p>
+        </div>
+        <div class="feature-card">
+            <h3>延伸内容自然</h3>
+            <p>从一条赛事动态可以平滑跳到背景知识或历史记录，不打断阅读流。</p>
+        </div>
+    </div>
+
+    <!-- 说明区：日常查询与延伸阅读场景 -->
+    <div class="section-title">从查询到延伸</div>
+    <p>很多时候我们只是想确认一下某个队伍的近期战绩，或是某条规则的原文。在<a href="https://cn-index-xingkongsports.com" class="inline-link">星空体育</a>，这类查询被设计得更像翻阅一本安静的参考手册——没有弹窗，没有强提醒，只有你主动打开的内容。</p>
+    <p>如果你对某个项目产生了更深的兴趣，页面中通常会附带相关的背景说明或术语小记，让你在不离开当前语境的情况下，自然拓宽了解。这种阅读方式，尤其适合赛前赛后那些想要“再多知道一点”的时刻。</p>
+
+    <div class="callout">
+        <p>💡 提示：试试从一场比赛的详情页出发，看看页面下方关联的“往季对阵”或“项目演变”段落——它们不是算法推荐，而是编辑整理的固定链接，更像一本书的脚注与延伸阅读。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="section-title">常见问题摘要</div>
+    <div class="faq-block">
+        <div class="faq-item">
+            <div class="faq-q">Q：内容更新频率如何？</div>
+            <div class="faq-a">常规赛程与结果在主要赛事结束后会尽快整理，历史资料按赛季归档。具体时效可参考页面底部标注的更新日期。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：可以只看某个项目的规则说明吗？</div>
+            <div class="faq-a">可以。每个项目主页面都设有“规则与术语”独立板块，与赛程数据分开，方便直接翻阅。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：移动端浏览体验如何？</div>
+            <div class="faq-a">页面采用响应式排版，在手机和平板上阅读段落、表格或引用框都不会变形，横竖屏均可正常使用。</div>
+        </div>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+        <span>← 回到首页 · <a href="https://cn-index-xingkongsports.com">星空体育</a></span>
+        <span>项目目录 · 常见术语 · 赛季归档</span>
+        <span style="color:#9a9083;">© 2025 · 查询参考页面</span>
+    </div>
+
+</div>
+</body>
+</html>
