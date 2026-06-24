@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 平台介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f2f5fa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            color: #1f2a3e;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 深色头图 hero */
+        .hero {
+            background: #0d1b2a;
+            padding: 5.5rem 1.5rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(to top, #f2f5fa, transparent);
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #eaeef3;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .tagline {
+            font-size: 1rem;
+            color: #a1b5cc;
+            max-width: 560px;
+            margin: 0.6rem auto 0;
+            border-top: 1px solid #2d405b;
+            padding-top: 0.75rem;
+        }
+
+        /* 浅色正文区 */
+        .container {
+            max-width: 880px;
+            margin: -1.2rem auto 2.5rem;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+
+        /* 卡片/段落块 */
+        .section-card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 20, 30, 0.06);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .section-card:hover {
+            box-shadow: 0 12px 26px rgba(0, 20, 30, 0.08);
+        }
+
+        .section-card h2 {
+            font-size: 1.45rem;
+            font-weight: 550;
+            color: #0d1b2a;
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #e9edf2;
+        }
+
+        .section-card p {
+            margin-bottom: 1.1rem;
+            font-size: 1rem;
+            color: #2b3e55;
+        }
+
+        .section-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 特点列表 — 更紧凑的卡片式列表 */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0 0.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 1.8rem;
+        }
+
+        .feature-list li {
+            flex: 1 1 200px;
+            background: #f6f9fe;
+            padding: 0.9rem 1.1rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            color: #1c2d42;
+            border-left: 4px solid #2b6fa7;
+            line-height: 1.6;
+        }
+
+        .feature-list li strong {
+            color: #0d1b2a;
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        /* 温和的提示块 */
+        .info-note {
+            background: #ecf2fa;
+            border-radius: 14px;
+            padding: 1.2rem 1.6rem;
+            font-size: 0.95rem;
+            color: #1a3149;
+            border: 1px solid #d4e0ed;
+            margin: 1.2rem 0 0.4rem;
+        }
+
+        .info-note a {
+            color: #1d6b9b;
+            text-decoration: none;
+            border-bottom: 1px dotted #8bb3d6;
+        }
+
+        .info-note a:hover {
+            color: #0c3f63;
+            border-bottom-style: solid;
+        }
+
+        /* 强调色链接 */
+        a {
+            color: #1c6da0;
+            text-decoration: none;
+            transition: color 0.15s ease;
+        }
+
+        a:hover {
+            color: #0e3d61;
+            text-decoration: underline;
+        }
+
+        .section-card a {
+            font-weight: 450;
+        }
+
+        /* 页面底部 */
+        .footer-note {
+            text-align: center;
+            padding: 2rem 1.5rem 2.8rem;
+            color: #6d7f99;
+            font-size: 0.85rem;
+            border-top: 1px solid #dce2ec;
+            margin-top: 0.8rem;
+            background: #f2f5fa;
+        }
+
+        .footer-note span {
+            display: inline-block;
+            margin: 0 0.3rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .section-card {
+                padding: 1.5rem 1.2rem;
+                border-radius: 14px;
+            }
+
+            .feature-list {
+                flex-direction: column;
+                gap: 0.7rem;
+            }
+
+            .feature-list li {
+                flex: 1 1 auto;
+            }
+
+            .hero {
+                padding: 3.8rem 1.2rem 3.2rem;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .container {
+                padding: 0 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图 -->
+    <header class="hero">
+        <h1>爱游戏</h1>
+        <p class="tagline">不止于游戏 · 一个聚合内容与服务的平台</p>
+    </header>
+
+    <!-- 正文区域 -->
+    <div class="container">
+
+        <!-- 开场短句 + 承接段落 -->
+        <div class="section-card">
+            <h2>站点 · 概览</h2>
+            <p><a href="https://viphub-igame.com">爱游戏</a> 是一个以游戏资讯、资源与社区互动为核心的在线平台。自上线以来，站点持续为玩家与爱好者提供相对完整的内容索引、版本信息以及实用工具入口。平台团队保持对内容的筛选与更新，力求呈现有价值、有条理的信息集合。</p>
+            <p>不同于单纯的下载站或论坛，<strong>爱游戏</strong> 更偏向于一种“索引+轻社交”的混合结构：用户既可以快速定位到感兴趣的游戏条目，也可以浏览由其他参与者贡献的评测与讨论。站点整体将信息密度与浏览效率放在重要位置，避免过度装饰或冗余跳转。</p>
+        </div>
+
+        <!-- 特点列表（卡片式） -->
+        <div class="section-card">
+            <h2>平台特征</h2>
+            <ul class="feature-list">
+                <li><strong>内容聚合</strong> 涵盖热门及经典游戏资料，分类清晰，检索路径较短。</li>
+                <li><strong>用户共建</strong> 注册成员可提交补充内容、修正条目或参与评分，信息流动相对开放。</li>
+                <li><strong>简洁界面</strong> 采用低干扰设计，重点突出文本与导航，减少视觉噪音。</li>
+                <li><strong>持续维护</strong> 运营方定期审核内容质量，清理过时链接与重复资料。</li>
+            </ul>
+            <div class="info-note">
+                💡 平台本身不提供盗版或破解资源，所有指向内容均遵循相关版权规范。若您对特定条目有疑问，可通过站内反馈渠道与维护组沟通。
+            </div>
+        </div>
+
+        <!-- 场景 / 可信说明段落 -->
+        <div class="section-card">
+            <h2>适合哪些场景？</h2>
+            <p>对于想快速了解某款游戏背景、系统要求或版本演变的新玩家来说，<a href="https://viphub-igame.com">爱游戏</a> 的条目页提供了相对完整的摘要与外部参考链接。而对于寻找同好讨论或希望分享经验的老玩家，社区板块也保留了适度的交流空间。</p>
+            <p>从可信度角度，平台在每条内容下方标注了最后更新时间与贡献者（或来源标识），方便用户自行判断时效与可靠性。尽管无法保证所有第三方链接永久有效，但团队会尽力维护核心资料区的准确度。</p>
+            <p style="margin-top: 0.8rem; color: #2d405c; font-size: 0.95rem;">—— 站点的定位是“游戏信息的整理者”，而非内容生产者。这种克制让 <strong>爱游戏</strong> 保持相对中立的资料属性。</p>
+        </div>
+
+        <!-- FAQ 摘要（温和提示式） -->
+        <div class="section-card">
+            <h2>常见问题 · 摘要</h2>
+            <p><strong>Q：注册后能获得什么？</strong><br>可收藏条目、参与评分、提交内容修改建议，以及使用社区基本功能（如发帖、私信）。注册免费，无隐藏门槛。</p>
+            <p><strong>Q：内容是否有审核？</strong><br>新提交的条目或修改会经过人工初筛，通常工作日 24 小时内得到反馈。违规或误导性内容会被退回。</p>
+            <p><strong>Q：移动端适配如何？</strong><br>页面采用响应式布局，在手机与平板上均可正常阅读和导航，部分复杂表格建议横屏查看。</p>
+            <p style="margin-bottom: 0;">📌 更多细节可浏览站点帮助页，或直接通过 <a href="https://viphub-igame.com">爱游戏</a> 首页底部联系维护组。</p>
+        </div>
+
+    </div>
+
+    <!-- 温和结尾 / footer -->
+    <footer class="footer-note">
+        <span>爱游戏 · 信息聚合与服务平台</span>
+        <span>—</span>
+        <span>内容仅供参考 具体以站点实时展示为准</span>
+    </footer>
+
+</body>
+</html>
